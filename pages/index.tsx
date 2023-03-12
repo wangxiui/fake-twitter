@@ -6,6 +6,7 @@
 */
 import Link from 'next/link';
 import { Button, Space } from 'antd';
+import {GithubOutlined} from '@ant-design/icons';
 
 /*features
 1.注册
@@ -14,6 +15,10 @@ import { Button, Space } from 'antd';
 const Home = () => {
   return (
     <div className="w-full h-full flex justify-center items-center flex-col">
+      <Link href="https://github.com/wangxiui/fake-twitter">
+        <GithubOutlined className='absolute right-10 top-10 text-4xl text-black' />
+      </Link>
+
       <h1 className='text-6xl'>Welcome to Twitter Lite!</h1>
       <p className="mt-6 mb-12 text-gray-400 text-2xl">Please login or register to get started.</p>
 
