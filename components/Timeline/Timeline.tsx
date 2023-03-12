@@ -50,6 +50,7 @@ const Timeline: React.FC = () => {
   return <>
     {/*发推表单*/}
     <Form
+      className='m-auto max-w-screen-md'
       size="large"
       form={form}
       initialValues={{ remember: true }}
@@ -72,11 +73,13 @@ const Timeline: React.FC = () => {
     }
 
     {/*时间线列表*/}
-    {tweetsAllList.map((tweet) => (
-      <Link key={tweet.tweetId} href={`/tweet/${tweet.tweetId}`} className='no-underline text-black'>
-        <Tweet data={tweet} isTweetId={false} />
-      </Link>
-    ))}
+    <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-4'>
+      {tweetsAllList.map((tweet) => (
+        <Link key={tweet.tweetId} href={`/tweet/${tweet.tweetId}`} className='no-underline text-black'>
+          <Tweet data={tweet} isTweetId={false} />
+        </Link>
+      ))}
+    </div>
   </>
 };
 

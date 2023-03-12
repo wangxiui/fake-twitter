@@ -26,7 +26,7 @@ const TweetIdPage = () => {
   }
 
   return <>
-    <div className='w-1/4 m-auto px-2 pt-2'>
+    <div className='w-full m-auto px-2 pt-2 max-w-screen-md m-auto'>
       <Button className='mb-6' type="default" htmlType="submit" shape="round" onClick={handleBack}>返回</Button>
 
       {tweetInfo

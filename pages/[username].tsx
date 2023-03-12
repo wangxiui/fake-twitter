@@ -32,8 +32,8 @@ function UserTimeline() {
   }
 
   return <>
-    <div className='w-1/4 m-auto px-2'>
-      <div className='flex justify-between items-center py-4'>
+    <div className='w-full m-auto px-2'>
+      <div className='flex justify-between items-center py-4 max-w-screen-md m-auto'>
         <h1 className='text-3xl text-black'>{username}'s Timeline</h1>
         <Popconfirm
           className='w-28'
