@@ -8,6 +8,8 @@ import Timeline from '@/components/Timeline'
 import { useRouter } from 'next/router';
 import {Button, Popconfirm} from "antd";
 import React from "react";
+import {userLogout} from "@/store/features/user";
+import {useAppDispatch} from "@/store/hooks";
 
 /*Features:
 1.时间线
@@ -21,10 +23,11 @@ import React from "react";
 */
 function UserTimeline() {
   const router = useRouter();
-  console.log('UserTimeline', router);
+  const dispatch = useAppDispatch();
   const { username } = router.query;
 
   const confirm = () => {
+    dispatch(userLogout(username));
     router.push('/')
   }
 

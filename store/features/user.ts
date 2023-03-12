@@ -15,8 +15,8 @@ export interface UserItem {
 const usersSlice = createSlice({
   name: 'users',
   initialState: {
-    currentUser: {} as UserItem,
-    usersList: [] as UserItem[]
+    currentUser: {} as UserItem, // 当前账号信息
+    usersList: [] as UserItem[] // 所有账号信息
   },
   reducers: {
     /**
@@ -46,11 +46,21 @@ const usersSlice = createSlice({
       // 设置当前用户
       state.currentUser = findUserItem
     },
+    /**
+     * 注销账号
+     * @param state
+     * @param action
+     */
     userLogout(state, action) {
-      const {username} = action.payload
+      const username = action.payload
       const findIndex = state.usersList.findIndex(user => user.username === username)
       state.usersList.splice(findIndex, 1)
     },
+    /**
+     * 设置当前用户
+     * @param state
+     * @param action
+     */
     userCurrentSet(state, action) {
       const {username, firstname, password} = action.payload
       state.currentUser = {
