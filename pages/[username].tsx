@@ -6,7 +6,8 @@
 */
 import Timeline from '@/components/Timeline'
 import { useRouter } from 'next/router';
-import {Button, Popconfirm} from "antd";
+import Link from "next/link";
+import {Button, Popconfirm, Space} from "antd";
 import React from "react";
 import {userLogout} from "@/store/features/user";
 import {useAppDispatch} from "@/store/hooks";
@@ -33,18 +34,22 @@ function UserTimeline() {
 
   return <>
     <div className='w-full m-auto px-2'>
-      <div className='flex justify-between items-center py-4 max-w-screen-md m-auto'>
-        <h1 className='text-3xl text-black'>{username}'s Timeline</h1>
-        <Popconfirm
-          className='w-28'
-          title={'提示'}
-          description={<div className='w-36'>是否确认注销？</div>}
-          onConfirm={confirm}
-          okText="确认"
-          cancelText="取消"
-        >
-          <Button type="default" htmlType="submit" shape="round" size='large'>注销</Button>
-        </Popconfirm>
+      <div className='flex justify-between items-center py-4 max-w-screen-md m-auto flex-wrap'>
+        <h1 className='text-3xl text-black flex-shrink-0'>{username}'s Timeline</h1>
+        <Space wrap size={12} className='flex-shrink-0'>
+          <Link href='/'><Button type="default" htmlType="submit" shape="round" size='large'>主页</Button></Link>
+          <Link href='/login'><Button type="default" htmlType="submit" shape="round" size='large'>重新登录</Button></Link>
+          <Popconfirm
+            className='w-28'
+            title={'提示'}
+            description={<div className='w-36'>是否确认注销？</div>}
+            onConfirm={confirm}
+            okText="确认"
+            cancelText="取消"
+          >
+            <Button type="default" danger htmlType="submit" shape="round" size='large'>注销</Button>
+          </Popconfirm>
+        </Space>
       </div>
 
       {/*时间线*/}
