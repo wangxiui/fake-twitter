@@ -79,7 +79,7 @@ const Tweet: React.FC<PropsWithChildren & Props> = ({data, isTweetId}) => {
 
   return (
     <div key={data.tweetId} className='flex items-start mb-6'>
-      <Avatar src={'https://randomuser.me/api/portraits/women/45.jpg'} className='flex-shrink-0' />
+      <Avatar src={`https://api.multiavatar.com/${data.username}.svg`} className='flex-shrink-0' />
       <div className='ml-2 flex-grow'>
         <div className='flex text-xl justify-between'>
           <Space wrap size={6}>
