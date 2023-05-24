@@ -6,6 +6,7 @@
 */
 // tailwind
 import '../styles/global.scss';
+import '@/components/PasswordChangeForm/PasswordChangeForm.scss';
 import { Provider } from 'react-redux'
 import store from '../store'
 
